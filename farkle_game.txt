@@ -1,0 +1,62 @@
+farkle game 
+
+PROGRAM: 
+- start Turn by rolling 6 dice 
+- determine Roll score by finding valid combos (worth most points) 
+- choose to set them aside 
+- add that Roll score to Turn score 
+- view remaining dice 
+- choose whether to roll again 
+- determine Roll score by finding valid combos (worth most points) 
+- when (1) chooses not to roll: Turn is over, add Turn score to Game score 
+- when (2) no valid combos: Turn is over, Turn score = 0 
+- (add code here if competing with another Player) 
+- start new Turn 
+
+SCORING
+- combos only made within the Roll 
+- can count multiple combos within a Roll but no overlapping dice 
+- search for valid combos in order of most points first, set aside points dice 
+- goal is to reach 10,000 points 
+- have to get 500 in one turn to get on board (add in at end) 
+- (use one of 2 pics for scoring combos) 
+
+
+
+Farkle Project Proposal 
+Brooklyn Sowards
+Layne Moseley 
+CSE 210 
+
+For my final project, I would like to make a Farkle game (originally a dice game), and it will be an individual project. 
+It will be a 1-player game. The program will run through these steps: roll dice, determine Roll score, set aside the dice and 
+add Roll score to Turn score, choose to roll again, and at the end of the Turn add the Turn score to Game score, start new Turn. 
+The player wins when they reach 10,000 points. They have to get 500+ points in one Turn before they can keep a consistent Game score. 
+When calculating scores from the dice, the program will check for highest point combinations first. 
+If the game is too simple and I finish quickly, I can add a second player to the game. 
+
+
+Farkle Project Design 
+
+CLASSES: 
+Roll, Turn, and Game (1 method) will inherit from Score to calculate the player's score. 
+Score (2 methods) will take the new dice created by Dice and go thru them to find valid point combos;
+then return the available scores which will be taken by Roll, then Turn, then Game. 
+Player (1 method) will create a player so that the Score class can assign the score to the player. 
+Dice (3 methods) will create the dice (create 6 new objects with a random value 1-6) (used by Score); have a method to display the dice 
+to the user (used by Program); then reset.
+Round (2 methods) will have a method to start a new round of the game (but keep the game going); as well as a method to end the entire game 
+and start a new one. 
+
+
+PRINCIPLES used by each class: 
+Abstraction - used in Player class when it creates an object Player. 
+Encapsulation - used in Dice class to keep other classes from accessing the new dice Dice objects (except Score). 
+Inheritance - used by Score class when it inherits the dice created by Dice and uses it to score the dice. 
+Polymorphism - used in Roll, Turn and Game which will all inherit from Score a method that will add the new score to the current score. 
+Also used by Score because it uses interface to inherit objects from both Dice and Player. 
+
+
+polymorphism:
+interface (one class inherits from multiple classes)
+virtual and override (in a method. v in parent class and o in child class)
